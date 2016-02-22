@@ -8,24 +8,24 @@ var io = require('socket.io')(server);
 var port = process.env.PORT || 3900;
 
 
-orm.connect("mysql://friendite:password@www.friendite.com:3306/friendit_datingpro", function (err, db) {
-  if (err) throw err;
+// orm.connect("mysql://friendite:password@www.friendite.com:3306/friendit_datingpro", function (err, db) {
+//   if (err) throw err;
 
-    var Person = db.define("pro_user", {
-        fname    : String,
-        sname : String,
-        login    : String,
-        email : String,
-        password: String
-    }, {
-        methods: {
-            fullName: function () {
-                return this.fname + ' ' + this.sname;
-            }
-        }
-    });
+//     var Person = db.define("pro_user", {
+//         fname    : String,
+//         sname : String,
+//         login    : String,
+//         email : String,
+//         password: String
+//     }, {
+//         methods: {
+//             fullName: function () {
+//                 return this.fname + ' ' + this.sname;
+//             }
+//         }
+//     });
 
-});
+// });
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
